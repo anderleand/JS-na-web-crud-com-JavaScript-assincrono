@@ -15,3 +15,15 @@ clienteService.detalhaCliente(id)
     console.log(dados.nome)
     console.log(dados.email)
 })
+
+
+const formulario = document.querySelector('[data-form]')
+formulario.addEventListener('submit', (evento) => {
+    evento.preventDefault()
+
+    clienteService.atualizaCliente(id, inputNome.value, inputEmail.value)
+
+    .then(()=>{
+        window.location.href = './edicao_concluida.html'
+    })
+})
